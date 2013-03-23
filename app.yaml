@@ -1,0 +1,60 @@
+application: dsconsultinggroups
+version: 2
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+- url: /stylesheets
+  static_dir: stylesheets
+
+- url: /js
+  static_dir: static/js
+
+- url: /html
+  static_dir: static/html
+
+- url: /images
+  static_dir: static/images
+
+- url: /about
+  script: about.app
+
+- url: /clients
+  script: clients.app
+
+- url: /testimonials
+  script: testimonials.app
+
+- url: /contact
+  script: contact.app
+
+- url: /contact_submit
+  script: contact.app
+
+
+
+
+
+- url: /services
+  script: services.app
+
+- url: /email
+  script: email.app
+
+
+- url: .*
+  script: main.app
+
+
+libraries:
+- name: webapp2
+  version: "2.5.2"
+- name: jinja2
+  version: latest
+- name: lxml
+  version: latest  
